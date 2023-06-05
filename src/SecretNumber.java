@@ -47,13 +47,13 @@ public class SecretNumber {
                     break;
                 case 2:
                     System.out.println("-------Alterar Dificuldade-------");
-                    System.out.println("1. Fácil\n2. Normal\n3. Difícil\n4. Impossível");
+                    System.out.println("1. Fácil\n2. Normal\n3. Difícil\n4. Muito difícil");
                     System.out.println("Digite o número da dificuldade que você deseja: ");
                     int opcaoDificuldade = sc.nextInt();
                     if (opcaoDificuldade == 1 || opcaoDificuldade == 2){
-                        dificuldade = (opcaoDificuldade == 1)? 11 : 31;
+                        dificuldade = (opcaoDificuldade == 1)? 11 : 51;
                     } else {
-                        dificuldade = (opcaoDificuldade == 3)? 101 : Integer.MAX_VALUE;
+                        dificuldade = (opcaoDificuldade == 3)? 101 : 1001;
                     }
                     for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
                     System.out.println("* A dificuldade do jogo foi alterada! *");
@@ -136,9 +136,9 @@ public class SecretNumber {
         String resposta = sc.next();
         if (resposta.equalsIgnoreCase("s")){
             System.out.println("------------A tabela de números foi-----------");
-            System.out.println("|  Tentativa  | Nº Sorteado | Nº Escolhido |");
+            System.out.println("| Tentativa | Nº Sorteado | Nº Escolhido |");
             for (int i=0; i<listaSorteados.size(); i++){
-                System.out.printf("|      %-3d    |      %-3d    |      %-3d     |%n", (i+1), listaSorteados.get(i), listaEscolhidos.get(i));
+                System.out.printf("|     %-3d   |     %-4d    |     %-4d     |%n", (i+1), listaSorteados.get(i), listaEscolhidos.get(i));
             }
         }
 
