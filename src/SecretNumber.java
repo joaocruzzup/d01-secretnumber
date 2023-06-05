@@ -23,6 +23,7 @@ public class SecretNumber {
         System.out.println("------------------------------------------------------------------");
         System.out.println("Digite aqui como você gostaria de ser chamado? ");
         String nomeUsuario = sc.nextLine();
+        for (int i =0; i < 25; i++){System.out.println();}
 
 
         // Menu
@@ -36,6 +37,7 @@ public class SecretNumber {
             System.out.println("1. Iniciar jogo \n2. Alterar dificuldade\n3. Alterar cores\n4. Sair do jogo");
             System.out.println("Digite o número da opção que você deseja acessar: ");
             int opcaoMenu = sc.nextInt();
+            for (int i =0; i < 25; i++){System.out.println();}
             switch (opcaoMenu){
                 case 1:
                     iniciarJogo = true;
@@ -44,13 +46,16 @@ public class SecretNumber {
                 case 2:
                     System.out.println("-------Alterar Dificuldade-------");
                     System.out.println("1. Fácil\n2. Normal\n3. Difícil\n4. Impossível");
+                    System.out.println("Digite o número da dificuldade que você deseja: ");
                     int opcaoDificuldade = sc.nextInt();
                     if (opcaoDificuldade == 1 || opcaoDificuldade == 2){
                         randomJogo = (opcaoDificuldade == 1)? random.nextInt(11) : random.nextInt(31);
                     } else {
                         randomJogo = (opcaoDificuldade == 3)? random.nextInt(101) : random.nextInt(Integer.MAX_VALUE);
                     }
-                    System.out.println("A dificuldade do jogo foi alterada! ");
+                    for (int i =0; i < 25; i++){System.out.println();}
+                    System.out.println("* A dificuldade do jogo foi alterada! *");
+
                     break;
                 case 3:
                     break;
