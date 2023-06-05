@@ -24,41 +24,53 @@ public class SecretNumber {
         System.out.println("Digite aqui como você gostaria de ser chamado? ");
         String nomeUsuario = sc.nextLine();
 
+
         // Menu
-        System.out.printf("%nOlá, %s! esse é o * Menu * do Secret Number! %n", nomeUsuario);
-        System.out.println("1. Iniciar jogo \n2. Alterar dificuldade\n3. Alterar cores\n4. Sair do jogo");
-        System.out.println("Digite o número da opção que você deseja acessar: ");
-        int opcao = sc.nextInt();
         boolean iniciarJogo = false;
+        boolean repeat = true;
+
 
         // Operações do Menu
-        switch (opcao){
-            case 1:
-                iniciarJogo = true;
-                break;
-            case 2:
-                System.out.println("-------Alterar Dificuldade-------");
-                System.out.println("1. Fácil\n2. Normal\n3. Difícil\n4. Impossível");
-                opcao = sc.nextInt();
-                if (opcao == 1 || opcao == 2){
-                    randomJogo = (opcao == 1)? random.nextInt(11) : random.nextInt(31);
-                } else {
-                    randomJogo = (opcao == 3)? random.nextInt(101) : random.nextInt(Integer.MAX_VALUE);
-                }
-                break;
-            case 3:
-                break;
-            case 4:
-                System.out.printf("Até mais, %s! %n", nomeUsuario);
-                System.out.println("Jogo encerrado!");
-                System.exit(0);
-                break;
-        }
+        do {
+            System.out.printf("%nOlá, %s! esse é o * Menu * do Secret Number! %n", nomeUsuario);
+            System.out.println("1. Iniciar jogo \n2. Alterar dificuldade\n3. Alterar cores\n4. Sair do jogo");
+            System.out.println("Digite o número da opção que você deseja acessar: ");
+            int opcaoMenu = sc.nextInt();
+            switch (opcaoMenu){
+                case 1:
+                    iniciarJogo = true;
+                    repeat = false;
+                    break;
+                case 2:
+                    System.out.println("-------Alterar Dificuldade-------");
+                    System.out.println("1. Fácil\n2. Normal\n3. Difícil\n4. Impossível");
+                    int opcaoDificuldade = sc.nextInt();
+                    if (opcaoDificuldade == 1 || opcaoDificuldade == 2){
+                        randomJogo = (opcaoDificuldade == 1)? random.nextInt(11) : random.nextInt(31);
+                    } else {
+                        randomJogo = (opcaoDificuldade == 3)? random.nextInt(101) : random.nextInt(Integer.MAX_VALUE);
+                    }
+                    System.out.println("A dificuldade do jogo foi alterada! ");
+                    break;
+                case 3:
+                    break;
+                default:
+                    if (opcaoMenu == 4){
+                        System.out.printf("Até mais, %s! %n", nomeUsuario);
+                        System.out.println("Jogo encerrado!");
+                        System.exit(0);
+                        repeat = false;
+                        break;
+                    }
+                    break;
+            }
+        } while (repeat);
+
 
 
         // Lógica do jogo
         if (iniciarJogo){
-            System.out.printf("Jogo iniciado! Boa sorte, %s... Você vai precisar haha! %n", nomeUsuario);
+            System.out.printf("Jogo iniciado! Boa sorte, %s! Você vai conseguir!!!", nomeUsuario);
             do {
                 System.out.println("\nDigite um número: ");
                 numEscolhido = sc.nextInt();
