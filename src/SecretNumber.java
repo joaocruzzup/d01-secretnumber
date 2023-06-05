@@ -33,7 +33,6 @@ public class SecretNumber {
 
 
         // Menu
-        boolean iniciarJogo = false;
         boolean repeat = true;
 
 
@@ -46,7 +45,6 @@ public class SecretNumber {
             for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
             switch (opcaoMenu){
                 case 1:
-                    iniciarJogo = true;
                     repeat = false;
                     break;
                 case 2:
@@ -92,39 +90,35 @@ public class SecretNumber {
         } while (repeat);
 
 
-
         // Lógica do jogo
-        if (iniciarJogo){
-            System.out.printf("Jogo iniciado! Boa sorte, %s! Você vai conseguir!!!", nomeUsuario);
-            do {
-                System.out.println("\nDigite um número: ");
-                numEscolhido = sc.nextInt();
+        System.out.printf("Jogo iniciado! Boa sorte, %s! Você vai conseguir!!!", nomeUsuario);
+        do {
+            System.out.println("\nDigite um número: ");
+            numEscolhido = sc.nextInt();
 
-                if (numEscolhido == randomJogo){
-                    pontuacao += 10;
-                    qtdAcertos10 += 1;
-                    System.out.println("Parabéns, você acertou o número! e ganhou 10 pontos :D ");
-                    System.out.println("-------------------------------------------------------");
-                    System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
-                    continuar = sc.next();
-                } else if (numEscolhido == numAcima || numEscolhido == numAbaixo) {
-                    pontuacao += 5;
-                    qtdAacertos5 += 1;
-                    System.out.println("Por pouco! Você quase acertou o número, mas ganhou 5 pontos :) ");
-                    System.out.println("------------------------------------------------------------");
-                    System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
-                    continuar = sc.next();
-                } else {
-                    qtdErros += 1;
-                    System.out.println("Que pena! Você errou o número e não ganhou nenhum ponto :( ");
-                    System.out.println("----------------------------------------------------------");
-                    System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
-                    continuar = sc.next();
-                }
+            if (numEscolhido == randomJogo){
+                pontuacao += 10;
+                qtdAcertos10 += 1;
+                System.out.println("Parabéns, você acertou o número! e ganhou 10 pontos :D ");
+                System.out.println("-------------------------------------------------------");
+                System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
+                continuar = sc.next();
+            } else if (numEscolhido == numAcima || numEscolhido == numAbaixo) {
+                pontuacao += 5;
+                qtdAacertos5 += 1;
+                System.out.println("Por pouco! Você quase acertou o número, mas ganhou 5 pontos :) ");
+                System.out.println("------------------------------------------------------------");
+                System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
+                continuar = sc.next();
+            } else {
+                qtdErros += 1;
+                System.out.println("Que pena! Você errou o número e não ganhou nenhum ponto :( ");
+                System.out.println("----------------------------------------------------------");
+                System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
+                continuar = sc.next();
+            }
 
-            } while (continuar.equalsIgnoreCase("s"));
-
-        }
+        } while (continuar.equalsIgnoreCase("s"));
 
 
         // Saída final de dados
