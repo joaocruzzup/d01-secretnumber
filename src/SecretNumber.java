@@ -13,8 +13,7 @@ public class SecretNumber {
         // Variáveis utilizadas
         Random random = new Random();
         int randomJogo = random.nextInt(11);
-        int numAcima = randomJogo + 1;
-        int numAbaixo = randomJogo - 1;
+        int dificuldade = 11;
         int pontuacao = 0;
         int numEscolhido;
         int qtdAcertos10 = 0;
@@ -52,9 +51,9 @@ public class SecretNumber {
                     System.out.println("Digite o número da dificuldade que você deseja: ");
                     int opcaoDificuldade = sc.nextInt();
                     if (opcaoDificuldade == 1 || opcaoDificuldade == 2){
-                        randomJogo = (opcaoDificuldade == 1)? random.nextInt(11) : random.nextInt(31);
+                        dificuldade = (opcaoDificuldade == 1)? 11 : 31;
                     } else {
-                        randomJogo = (opcaoDificuldade == 3)? random.nextInt(101) : random.nextInt(Integer.MAX_VALUE);
+                        dificuldade = (opcaoDificuldade == 3)? 101 : Integer.MAX_VALUE;
                     }
                     for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
                     System.out.println("* A dificuldade do jogo foi alterada! *");
@@ -92,6 +91,7 @@ public class SecretNumber {
         // Lógica do jogo
         System.out.printf("Jogo iniciado! Boa sorte, %s! Você vai conseguir!!!", nomeUsuario);
         do {
+            randomJogo = random.nextInt(dificuldade);
             System.out.println("\nDigite um número: ");
             numEscolhido = sc.nextInt();
 
@@ -104,7 +104,7 @@ public class SecretNumber {
                 System.out.println("-------------------------------------------------------");
                 System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
                 continuar = sc.next();
-            } else if (numEscolhido == numAcima || numEscolhido == numAbaixo) { // lógica dos Quase Acertos
+            } else if (numEscolhido == randomJogo +1 || numEscolhido == randomJogo -1) { // lógica dos Quase Acertos
                 pontuacao += 5;
                 qtdAacertos5 += 1;
                 listaEscolhidos.add(numEscolhido);
