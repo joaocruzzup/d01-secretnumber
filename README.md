@@ -3,7 +3,7 @@
 <img src="https://github.com/joaocruzzup/d01-secretnumber/blob/main/img/secretNumber.png" width="500" height="300" alt="Descrição da imagem">
 </div>
 
-## Sumário do readme
+## Sumário
 
 1. [O que é o Secret Number?](#em-qual-linguagem-é-feito-o-readmemd)
 2. [Entendendo as branchs do projeto]()
@@ -13,7 +13,7 @@
 6. [Assuntos do java utilizados](#assuntos-do-java-utilizados)
 7. [Autor](#autor)
 
-## O que é o Secret Number?
+## 🎮 O que é o Secret Number?
 
 Secret Number (Número secreto) é o nome de um jogo para ser jogado em terminal criado com a partir do desafio proposto do Programa Catalisa.
 
@@ -26,7 +26,7 @@ Assim o enunciado do desafio requeria os seguintes passos:
    3. Se não atender aos requisitos anteriores, o usuário não ganha pontos.
 4. No fim, exibir a pontuação no console.
 
-## Entendendo as branchs do projeto
+## 🧮 Entendendo as branchs do projeto
 
 Para a entrega do desafio, explicado anteriormente era possível realizar entregas de acordo com a quantidade de implementações propostas. Assim, as branchs são separadas em:
 
@@ -40,7 +40,7 @@ E o fluxo de commits nas branchs se deu da seguinte forma:
 </div>
 
 
-## Como executar?
+## ⏯️ Como executar?
 
 - Você precisará ter o [JDK 11](https://www.oracle.com/java/technologies/downloads/#java11) instalado no seu computador;
 - Baixe o repositório do projeto;
@@ -54,7 +54,7 @@ javac SecretNumber.java
 java SecretNumber.java
 ```
 
-## Tutorial do jogo
+## 📋 Tutorial do jogo
 
 1. Selecione iniciar jogo no * Menu *");
 2. Você pode alterar dificuldades no Menu. O padrão é Fácil.
@@ -70,14 +70,14 @@ java SecretNumber.java
 8. No final você terá uma tabela mostrando o seu desempenho
 9. Se divirta!
 
-## Assuntos do Java utilizados
+## ☕ Assuntos do Java utilizados
 
 - Declaração de variáveis
 - Entrada e saída de dados (Scanner e print)
 - Estruturas condicionais (if, else, else-if)
 - Estruturas de repetição (for, do while, while)
 
-## Possíveis Melhorias 
+## ⚙️ Possíveis Melhorias 
 
 Como o jogo foi elaborado com conhecimentos que eu sei do java, assim conhecimentos ainda iniciais, os principais problemas é em relação ao código, sendo eles:
 
@@ -87,15 +87,13 @@ Como o jogo foi elaborado com conhecimentos que eu sei do java, assim conhecimen
 
 Assim, pretendo futuramente corrigir esses problemas e melhorar o jogo!
 
-
-
-## Autor
+## 👨‍💻 Autor
 
 Nome: João Cruz<br>Linkedin: https://www.linkedin.com/in/joaosilvacruz/
 
 ---
 
-<h4 align=center>Made by <a href="https://github.com/joaocruzzup">João Cruz</a></h4>
+<h4 align=center>Made with 💚 by <a href="https://github.com/joaocruzzup">João Cruz</a></h4>
 
 
 
