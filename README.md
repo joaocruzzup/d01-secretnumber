@@ -28,7 +28,7 @@ Assim o enunciado do desafio requeria os seguintes passos:
 
 ## 🧮 Entendendo as branchs do projeto
 
-Para a entrega do desafio, explicado anteriormente era possível realizar entregas de acordo com a quantidade de implementações propostas. Assim, as branchs são separadas em:
+Para a entrega do desafio, explicado anteriormente era possível realizar entregas conforme a quantidade de implementações propostas. Assim, as branchs são separadas em:
 
 1. entrega-minima: Branch com as funcionalidades da entrega mínima.
 2. entrega-media: Branch com as funcionalidades da entrega média.
@@ -36,7 +36,7 @@ Para a entrega do desafio, explicado anteriormente era possível realizar entreg
 
 E o fluxo de commits nas branchs se deu da seguinte forma:
 <div align="center">
-<img src="https://github.com/joaocruzzup/d01-secretnumber/blob/main/img/branchs.png" width="600" height="400" alt="Descrição da imagem">
+<img src="https://github.com/joaocruzzup/d01-secretnumber/blob/main/img/branchs.png" width="500" height="250" alt="Descrição da imagem">
 </div>
 
 
