@@ -10,6 +10,7 @@ public class SecretNumber {
         // Lista criadas para armazenar os números
         List<Integer> listaSorteados = new ArrayList<>();
         List<Integer> listaEscolhidos = new ArrayList<>();
+        List<String> listaResultado = new ArrayList<>();
 
         // Variáveis utilizadas
         Random random = new Random();
@@ -121,6 +122,8 @@ public class SecretNumber {
                 qtdAcertos10 += 1;
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
+                listaResultado.add("Acertou");
+
                 for (int i =0; i < 40; i++){System.out.println();} //Limpar a tela
                 System.out.printf("* Parabéns, %s! Você acertou o número! e ganhou 10 pontos :D *%n%n", nomeUsuario);
                 System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
@@ -131,6 +134,8 @@ public class SecretNumber {
                 qtdAacertos5 += 1;
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
+                listaResultado.add("Quase acertou");
+
                 for (int i =0; i < 40; i++){System.out.println();} //Limpar a tela
                 System.out.printf("* Por pouco, %s! Você quase acertou o número, mas ganhou 5 pontos :) *%n%n", nomeUsuario);
                 System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não:");
@@ -140,6 +145,8 @@ public class SecretNumber {
                 qtdErros += 1;
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
+                listaResultado.add("Errou");
+
                 for (int i =0; i < 40; i++){System.out.println();} //Limpar a tela
                 System.out.printf("* Que pena, %s! Você errou o número e não ganhou nenhum ponto :( *%n%n", nomeUsuario);
                 System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não:");
@@ -154,6 +161,7 @@ public class SecretNumber {
         for (int i =0; i < 40; i++){System.out.println();} //Limpar a tela
         System.out.println("-------------Placar Final------------");
         System.out.printf("Sua pontuação foi total: %3d pontos %n", pontuacao);
+        System.out.printf("Você jogou: %16d partidas%n", (qtdAcertos10+qtdAacertos5+qtdErros));
         System.out.printf("Você acertou: %14d números %n", qtdAcertos10);
         System.out.printf("Você quase acertou: %8d números %n", qtdAacertos5);
         System.out.printf("Você errou: %16d números %n", qtdErros);
@@ -162,9 +170,10 @@ public class SecretNumber {
         String resposta = sc.next();
         if (resposta.equalsIgnoreCase("s")){
             System.out.println("------------A tabela de números foi-----------");
-            System.out.println("| Tentativa | Nº Sorteado | Nº Escolhido |");
+            System.out.println("| Tentativa | Nº Sorteado | Nº Escolhido |   Resultado   |");
             for (int i=0; i<listaSorteados.size(); i++){
-                System.out.printf("|     %-3d   |     %-4d    |     %-4d     |%n", (i+1), listaSorteados.get(i), listaEscolhidos.get(i));
+                System.out.printf("|     %-3d   |     %-4d    |     %-4d     | %-14s|%n",
+                        (i+1), listaSorteados.get(i), listaEscolhidos.get(i), listaResultado.get(i));
             }
         } else {
             System.out.printf("%nTudo bem! Até mais, %s! %n", nomeUsuario);
