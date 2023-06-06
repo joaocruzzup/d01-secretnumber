@@ -96,8 +96,8 @@ java SecretNumber.java
 Como o jogo foi elaborado com conhecimentos que eu sei do java, assim conhecimentos ainda iniciais, os principais problemas é em relação ao código, sendo eles:
 
 - O código está muito extenso, tornando a legibilidade difícil;
-- A forma de limpar a tela para mudar de telas utiliza um laço for imprimindo várias quebras de linhas;
-- Os dados são perdidos
+- A forma de limpar a tela para mudar de telas utiliza um laço for imprimindo várias quebras de linhas, o que não é tão eficiente;
+- Não há uma implementação de um ranking, o que faz que as pontuações de jogadores anteriores sejam perdidas.
 
 Assim, pretendo futuramente corrigir esses problemas e melhorar o jogo!
 
