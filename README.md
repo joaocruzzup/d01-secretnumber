@@ -5,13 +5,13 @@
 
 ## Sumário
 
-1. [O que é o Secret Number?](#em-qual-linguagem-é-feito-o-readmemd)
+1. [O que é o Secret Number?](#-o-que-é-o-secret-number)
 2. [Funcionalidades do Secret Number](#funcionalidades-do-secret-number)
-3. [Entendendo as branchs do projeto](#entendendo-as-branchs-do-projeto)
-4. [Como executar?](#criando-um-readme)
-5. [Tutorial do Jogo](#como-escrever-em-markdown)
-6. [Melhorias](#tabela-resumo-dos-principais-comandos)
-7. [Assuntos do java utilizados](#assuntos-do-java-utilizados)
+3. [Entendendo as branchs do projeto](#-entendendo-as-branchs-do-projeto)
+4. [Como executar?](#-como-executar)
+5. [Tutorial do Jogo](#-tutorial-do-jogo)
+6. [Possíveis Melhorias](#-possíveis-melhorias-)
+7. [Assuntos do java utilizados](#-assuntos-do-java-utilizados)
 8. [Autor](#autor)
 
 ## 🎮 O que é o Secret Number?
