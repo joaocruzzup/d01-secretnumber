@@ -13,7 +13,7 @@ public class SecretNumber {
 
         // Variáveis utilizadas
         Random random = new Random();
-        int dificuldade = 11;
+        int dificuldade = 10;
         String nomeDificuldade = "Fácil";
         int pontuacao = 0;
         int numEscolhido;
@@ -105,8 +105,9 @@ public class SecretNumber {
         } while (repeat);
 
         // Lógica do jogo
-        System.out.printf("Jogo iniciado! Boa sorte, %s! Você vai conseguir!!!", nomeUsuario);
+        System.out.print("Jogo iniciado! ");
         do {
+            System.out.printf("%nBoa sorte, %s! Você vai conseguir!!! %n", nomeUsuario);
             int randomJogo = random.nextInt(dificuldade) + 1; // Números a partir de 1 até o valor de dificuldade
             System.out.printf("%nDigite um número entre %d e %d: %n", 1, dificuldade);
             numEscolhido = sc.nextInt();
@@ -121,7 +122,7 @@ public class SecretNumber {
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
                 for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
-                System.out.println("* Parabéns, você acertou o número! e ganhou 10 pontos :D *");
+                System.out.printf("* Parabéns, %s! Você acertou o número! e ganhou 10 pontos :D *%n%n", nomeUsuario);
                 System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
                 continuar = sc.next();
             } else if (numEscolhido == randomJogo +1 || numEscolhido == randomJogo -1) { // lógica dos Quase Acertos
@@ -130,7 +131,7 @@ public class SecretNumber {
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
                 for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
-                System.out.println("* Por pouco! Você quase acertou o número, mas ganhou 5 pontos :) *\n");
+                System.out.printf("* Por pouco, %s! Você quase acertou o número, mas ganhou 5 pontos :) *%n%n", nomeUsuario);
                 System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não:");
                 continuar = sc.next();
             } else { // Lógica dos Erros
@@ -138,7 +139,7 @@ public class SecretNumber {
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
                 for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
-                System.out.println("* Que pena! Você errou o número e não ganhou nenhum ponto :( *\n");
+                System.out.printf("* Que pena, %s! Você errou o número e não ganhou nenhum ponto :( *%n%n", nomeUsuario);
                 System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não:");
                 continuar = sc.next();
             }
@@ -163,6 +164,5 @@ public class SecretNumber {
                 System.out.printf("|     %-3d   |     %-4d    |     %-4d     |%n", (i+1), listaSorteados.get(i), listaEscolhidos.get(i));
             }
         }
-
     }
 }
