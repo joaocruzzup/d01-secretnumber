@@ -5,14 +5,24 @@ public class SecretNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // Variáveis do Cabeçalho
+        String esp = " ";
+        String texto1 = "SECRET NUMBER";
+        String texto2 = "Acerte o número secreto";
+        String texto3 = "e ganhe pontos!";
+        String texto4 = "Pressione * ENTER * para começar!";
+
         // Cabeçalho
-        System.out.println("------------------------------------------------------------------");
-        System.out.println("Boas-vindas ao Secret Number, o melhor jogo de números aleatórios!");
-        System.out.println("------------------------------------------------------------------");
+        System.out.println(" ------------------------------------ ");
+        System.out.printf("| %23s %10s |%n| %34s |%n| %28s %5s |%n| %25s %8s |%n| %34s |%n|"
+                , texto1, esp, esp, texto2, esp, texto3, esp, esp);
+        System.out.printf("  %10s |%n| %34s |%n ", texto4, esp);
+        System.out.println("------------------------------------");
+        sc.nextLine();
 
         // Variáveis utilizadas
         Random random = new Random();
-        int randomFacil = random.nextInt(11);
+        int randomFacil = random.nextInt(10) + 1;
         int numAcima = randomFacil + 1;
         int numAbaixo = randomFacil - 1;
         int pontuacao = 0;
@@ -23,9 +33,15 @@ public class SecretNumber {
         String continuar;
 
         // Lógica do jogo
+        System.out.println("Jogo iniciado!");
         do {
-            System.out.println("\nDigite um número: ");
+            System.out.println("\nDigite um número de 1 a 10: ");
             numEscolhido = sc.nextInt();
+            while (numEscolhido < 0 || numEscolhido > 10){
+                System.out.println("\n* Opção inválida! *");
+                System.out.println("Digite um número de 1 a 10: ");
+                numEscolhido = sc.nextInt();
+            }
 
             if (numEscolhido == randomFacil){
                 pontuacao += 10;
