@@ -36,7 +36,7 @@ Para a entrega do desafio, explicado anteriormente era possível realizar entreg
 
 E o fluxo de commits nas branchs se deu da seguinte forma:
 <div align="center">
-<img src="https://github.com/joaocruzzup/d01-secretnumber/blob/main/img/branchs.png" width="500" height="250" alt="Descrição da imagem">
+<img src="https://github.com/joaocruzzup/d01-secretnumber/blob/main/img/branchs.png" width="600" height="300" alt="Descrição da imagem">
 </div>
 
 
