@@ -6,12 +6,13 @@
 ## Sumário
 
 1. [O que é o Secret Number?](#em-qual-linguagem-é-feito-o-readmemd)
-2. [Entendendo as branchs do projeto]()
-3. [Como executar?](#criando-um-readme)
-4. [Tutorial do Jogo](#como-escrever-em-markdown)
-5. [Melhorias](#tabela-resumo-dos-principais-comandos)
-6. [Assuntos do java utilizados](#assuntos-do-java-utilizados)
-7. [Autor](#autor)
+2. [Funcionalidades do Secret Number](#funcionalidades-do-secret-number)
+3. [Entendendo as branchs do projeto](#entendendo-as-branchs-do-projeto)
+4. [Como executar?](#criando-um-readme)
+5. [Tutorial do Jogo](#como-escrever-em-markdown)
+6. [Melhorias](#tabela-resumo-dos-principais-comandos)
+7. [Assuntos do java utilizados](#assuntos-do-java-utilizados)
+8. [Autor](#autor)
 
 ## 🎮 O que é o Secret Number?
 
@@ -25,6 +26,19 @@ Assim o enunciado do desafio requeria os seguintes passos:
    2. Se o número gerado for +-1 do número digitado, o usuário deve ganhar 5 pontos
    3. Se não atender aos requisitos anteriores, o usuário não ganha pontos.
 4. No fim, exibir a pontuação no console.
+
+## Funcionalidades do Secret Number
+
+O jogo Secret Number conta como algumas funcionalidades, são elas:
+
+- Navegação entre Menus
+   - Menu inicial
+   - Menu Alterar Dificuldade
+   - Menu Como Jogar?
+- Possibilidade de jogar mais de 1 vez
+- Pontuação acumulada
+- Exibição detalhada dos resultados ao final
+
 
 ## 🧮 Entendendo as branchs do projeto
 
