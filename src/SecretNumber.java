@@ -13,7 +13,7 @@ public class SecretNumber {
 
         // Variáveis utilizadas
         Random random = new Random();
-        int dificuldade = 11;
+        int dificuldade = 10;
         String nomeDificuldade = "Fácil";
         int pontuacao = 0;
         int numEscolhido;
@@ -40,7 +40,7 @@ public class SecretNumber {
         // Tela do nome do usuário
         System.out.print("Como você gostaria de ser chamado? (Digite sem espaços) \nNome: ");
         String nomeUsuario = sc.next();
-        for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
+        for (int i =0; i < 35; i++){System.out.println();} //Limpar a tela
 
         // Operações do Menu
         boolean repeat = true;
@@ -51,7 +51,7 @@ public class SecretNumber {
             System.out.println("Digite o número da opção que você deseja acessar: ");
             int opcaoMenu = sc.nextInt();
 
-            for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
+            for (int i =0; i < 35; i++){System.out.println();} //Limpar a tela
             switch (opcaoMenu){
                 case 1:
                     repeat = false;
@@ -70,7 +70,7 @@ public class SecretNumber {
                         dificuldade = (opcaoDificuldade == 3)? 100 : 1000;
                         nomeDificuldade = (opcaoDificuldade == 3)? "Difícil" : "Muito Difícil";
                     }
-                    for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
+                    for (int i =0; i < 35; i++){System.out.println();} //Limpar a tela
                     System.out.printf("* A dificuldade do jogo foi alterada para: { %s } * %n", nomeDificuldade);
                     break;
                 case 3:
@@ -89,7 +89,7 @@ public class SecretNumber {
                     System.out.println("\n Digite * ENTER * para voltar ao menu: ");
                     sc.nextLine();
                     sc.nextLine();
-                    for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
+                    for (int i =0; i < 35; i++){System.out.println();} //Limpar a tela
                     break;
                 case 4:
                     // Mensagem de saída do jogo
@@ -105,8 +105,9 @@ public class SecretNumber {
         } while (repeat);
 
         // Lógica do jogo
-        System.out.printf("Jogo iniciado! Boa sorte, %s! Você vai conseguir!!!", nomeUsuario);
+        System.out.print("Jogo iniciado! ");
         do {
+            System.out.printf("%nBoa sorte, %s! Você vai conseguir!!! %n", nomeUsuario);
             int randomJogo = random.nextInt(dificuldade) + 1; // Números a partir de 1 até o valor de dificuldade
             System.out.printf("%nDigite um número entre %d e %d: %n", 1, dificuldade);
             numEscolhido = sc.nextInt();
@@ -120,34 +121,37 @@ public class SecretNumber {
                 qtdAcertos10 += 1;
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
-                for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
-                System.out.println("* Parabéns, você acertou o número! e ganhou 10 pontos :D *");
+                for (int i =0; i < 35; i++){System.out.println();} //Limpar a tela
+                System.out.printf("* Parabéns, %s! Você acertou o número! e ganhou 10 pontos :D *%n%n", nomeUsuario);
                 System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
                 continuar = sc.next();
+                for (int i =0; i < 35; i++){System.out.println();} //Limpar a tela
             } else if (numEscolhido == randomJogo +1 || numEscolhido == randomJogo -1) { // lógica dos Quase Acertos
                 pontuacao += 5;
                 qtdAacertos5 += 1;
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
-                for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
-                System.out.println("* Por pouco! Você quase acertou o número, mas ganhou 5 pontos :) *\n");
+                for (int i =0; i < 35; i++){System.out.println();} //Limpar a tela
+                System.out.printf("* Por pouco, %s! Você quase acertou o número, mas ganhou 5 pontos :) *%n%n", nomeUsuario);
                 System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não:");
                 continuar = sc.next();
+                for (int i =0; i < 35; i++){System.out.println();} //Limpar a tela
             } else { // Lógica dos Erros
                 qtdErros += 1;
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
-                for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
-                System.out.println("* Que pena! Você errou o número e não ganhou nenhum ponto :( *\n");
+                for (int i =0; i < 35; i++){System.out.println();} //Limpar a tela
+                System.out.printf("* Que pena, %s! Você errou o número e não ganhou nenhum ponto :( *%n%n", nomeUsuario);
                 System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não:");
                 continuar = sc.next();
+                for (int i =0; i < 35; i++){System.out.println();} //Limpar a tela
             }
 
         } while (continuar.equalsIgnoreCase("s"));
 
 
         // Saída final de dados
-        for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
+        for (int i =0; i < 35; i++){System.out.println();} //Limpar a tela
         System.out.println("-------------Placar Final------------");
         System.out.printf("Sua pontuação foi total: %3d pontos %n", pontuacao);
         System.out.printf("Você acertou: %14d números %n", qtdAcertos10);
@@ -162,7 +166,9 @@ public class SecretNumber {
             for (int i=0; i<listaSorteados.size(); i++){
                 System.out.printf("|     %-3d   |     %-4d    |     %-4d     |%n", (i+1), listaSorteados.get(i), listaEscolhidos.get(i));
             }
+        } else {
+            System.out.printf("%nTudo bem! Até mais, %s! %n", nomeUsuario);
+            System.out.println("Jogo encerrado!");
         }
-
     }
 }
