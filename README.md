@@ -11,7 +11,7 @@
 4. [Como executar?](#-como-executar)
 5. [Tutorial do Jogo](#-tutorial-do-jogo)
 6. [Assuntos do java utilizados](#-assuntos-do-java-utilizados)
-7. [Possíveis Melhorias](#-possíveis-melhorias)
+7. [Possiveis Melhorias](#-possiveis-melhorias)
 8. [Autor](#-autor)
 
 ## 🎮 O que é o Secret Number?
@@ -91,7 +91,7 @@ java SecretNumber.java
 - Estruturas condicionais (if, else, else-if)
 - Estruturas de repetição (for, do while, while)
 
-## ⚙️ Possíveis Melhorias
+## ⚙️ Possiveis Melhorias
 
 Como o jogo foi elaborado com conhecimentos que eu sei do java, assim conhecimentos ainda iniciais, os principais problemas é em relação ao código, sendo eles:
 
