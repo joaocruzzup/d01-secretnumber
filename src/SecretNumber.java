@@ -20,21 +20,27 @@ public class SecretNumber {
         int qtdAacertos5 = 0;
         int qtdErros = 0;
         String continuar;
+        String esp = " ";
+        String texto1 = "SECRET NUMBER";
+        String texto2 = "Acerte o número secreto";
+        String texto3 = "e ganhe pontos!";
+        String texto4 = "Pressione * ENTER * para começar!";
 
         // Cabeçalho
-        System.out.println("------------------------------------------------------------------");
-        System.out.println("Boas-vindas ao Secret Number, o melhor jogo de números aleatórios!");
-        System.out.println("------------------------------------------------------------------");
+        System.out.println(" ------------------------------------ ");
+        System.out.printf("| %23s %10s |%n| %34s |%n| %28s %5s |%n| %25s %8s |%n| %34s |%n|"
+                , texto1, esp, esp, texto2, esp, texto3, esp, esp);
+        System.out.printf("  %10s |%n| %34s |%n ", texto4, esp);
+        System.out.println("------------------------------------");
+        sc.nextLine();
+
+        // Tela do nome do usuário
         System.out.println("Digite aqui como você gostaria de ser chamado? ");
         String nomeUsuario = sc.nextLine();
         for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
 
-
-        // Menu
-        boolean repeat = true;
-
-
         // Operações do Menu
+        boolean repeat = true;
         do {
             System.out.printf("%nOlá, %s! esse é o * Menu * do Secret Number! %n", nomeUsuario);
             System.out.println("1. Iniciar jogo \n2. Alterar dificuldade\n3. Como Jogar\n4. Sair do jogo");
