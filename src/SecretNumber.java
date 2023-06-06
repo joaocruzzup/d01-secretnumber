@@ -7,12 +7,12 @@ public class SecretNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // Lista criadas para armazenar os números
         List<Integer> listaSorteados = new ArrayList<>();
         List<Integer> listaEscolhidos = new ArrayList<>();
 
         // Variáveis utilizadas
         Random random = new Random();
-        int randomJogo = random.nextInt(11);
         int dificuldade = 11;
         String nomeDificuldade = "Fácil";
         int pontuacao = 0;
@@ -21,7 +21,6 @@ public class SecretNumber {
         int qtdAacertos5 = 0;
         int qtdErros = 0;
         String continuar;
-
 
         // Variáveis do Cabeçalho
         String esp = " ";
@@ -39,8 +38,8 @@ public class SecretNumber {
         sc.nextLine();
 
         // Tela do nome do usuário
-        System.out.println("Digite aqui como você gostaria de ser chamado? ");
-        String nomeUsuario = sc.nextLine();
+        System.out.print("Como você gostaria de ser chamado? (Digite sem espaços) \nNome: ");
+        String nomeUsuario = sc.next();
         for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
 
         // Operações do Menu
@@ -65,13 +64,14 @@ public class SecretNumber {
                     System.out.println("Digite o número da dificuldade que você deseja: ");
                     int opcaoDificuldade = sc.nextInt();
                     if (opcaoDificuldade == 1 || opcaoDificuldade == 2){
-                        dificuldade = (opcaoDificuldade == 1)? 11 : 51;
+                        dificuldade = (opcaoDificuldade == 1)? 10 : 50;
+                        nomeDificuldade = (opcaoDificuldade == 1)? "Fácil" : "Normal";
                     } else {
-                        dificuldade = (opcaoDificuldade == 3)? 101 : 1001;
+                        dificuldade = (opcaoDificuldade == 3)? 100 : 1000;
+                        nomeDificuldade = (opcaoDificuldade == 3)? "Difícil" : "Muito Difícil";
                     }
                     for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
-                    System.out.println("* A dificuldade do jogo foi alterada! *");
-
+                    System.out.printf("* A dificuldade do jogo foi alterada para: { %s } * %n", nomeDificuldade);
                     break;
                 case 3:
                     // Menu Como jogar
@@ -86,38 +86,42 @@ public class SecretNumber {
                     System.out.println(" 4: Você pode jogar novamente quantas vezes quiser, basta digitar S para continuar ou N para parar");
                     System.out.println(" 5: No final você terá uma tabela mostrando o seu desempenho");
                     System.out.println(" 6: Se divirta!");
-                    System.out.println("\n Digite qualquer tecla para voltar ao menu: ");
+                    System.out.println("\n Digite * ENTER * para voltar ao menu: ");
                     sc.nextLine();
                     sc.nextLine();
                     for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
                     break;
-                default:
-                    if (opcaoMenu == 4){
-                        System.out.printf("Até mais, %s! %n", nomeUsuario);
-                        System.out.println("Jogo encerrado!");
-                        System.exit(0);
-                        repeat = false;
-                        break;
-                    }
+                case 4:
+                    // Mensagem de saída do jogo
+                    System.out.printf("Até mais, %s! %n", nomeUsuario);
+                    System.out.println("Jogo encerrado!");
+                    System.exit(0);
+                    repeat = false;
                     break;
+                default:
+                    // Validação de entradas incoerentes para o menu
+                    System.out.println("*--------------Opção inválida!--------------*");
             }
         } while (repeat);
-
 
         // Lógica do jogo
         System.out.printf("Jogo iniciado! Boa sorte, %s! Você vai conseguir!!!", nomeUsuario);
         do {
-            randomJogo = random.nextInt(dificuldade);
-            System.out.println("\nDigite um número: ");
+            int randomJogo = random.nextInt(dificuldade) + 1; // Números a partir de 1 até o valor de dificuldade
+            System.out.printf("%nDigite um número entre %d e %d: %n", 1, dificuldade);
             numEscolhido = sc.nextInt();
-
+            while (numEscolhido < 1 || numEscolhido > dificuldade){
+                System.out.print("\n* Opção inválida! *");
+                System.out.printf("%nDigite um número entre %d e %d: %n", 1, dificuldade);
+                numEscolhido = sc.nextInt();
+            }
             if (numEscolhido == randomJogo){ // lógica do Acertos
                 pontuacao += 10;
                 qtdAcertos10 += 1;
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
-                System.out.println("Parabéns, você acertou o número! e ganhou 10 pontos :D ");
-                System.out.println("-------------------------------------------------------");
+                for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
+                System.out.println("* Parabéns, você acertou o número! e ganhou 10 pontos :D *");
                 System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
                 continuar = sc.next();
             } else if (numEscolhido == randomJogo +1 || numEscolhido == randomJogo -1) { // lógica dos Quase Acertos
@@ -125,17 +129,17 @@ public class SecretNumber {
                 qtdAacertos5 += 1;
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
-                System.out.println("Por pouco! Você quase acertou o número, mas ganhou 5 pontos :) ");
-                System.out.println("------------------------------------------------------------");
-                System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
+                for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
+                System.out.println("* Por pouco! Você quase acertou o número, mas ganhou 5 pontos :) *\n");
+                System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não:");
                 continuar = sc.next();
             } else { // Lógica dos Erros
                 qtdErros += 1;
                 listaEscolhidos.add(numEscolhido);
                 listaSorteados.add(randomJogo);
-                System.out.println("Que pena! Você errou o número e não ganhou nenhum ponto :( ");
-                System.out.println("----------------------------------------------------------");
-                System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não");
+                for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
+                System.out.println("* Que pena! Você errou o número e não ganhou nenhum ponto :( *\n");
+                System.out.println("Você deseja jogar novamente? \nDigite 'S' para Sim e 'N' para Não:");
                 continuar = sc.next();
             }
 
@@ -143,12 +147,14 @@ public class SecretNumber {
 
 
         // Saída final de dados
+        for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
         System.out.println("-------------Placar Final------------");
         System.out.printf("Sua pontuação foi total: %3d pontos %n", pontuacao);
         System.out.printf("Você acertou: %14d números %n", qtdAcertos10);
         System.out.printf("Você quase acertou: %8d números %n", qtdAacertos5);
         System.out.printf("Você errou: %16d números %n", qtdErros);
         System.out.println("\nVocê gostaria de ver quais números foram sorteados?");
+        System.out.println("Digite 'S' para Sim e 'N' para Não: ");
         String resposta = sc.next();
         if (resposta.equalsIgnoreCase("s")){
             System.out.println("------------A tabela de números foi-----------");
