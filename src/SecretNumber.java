@@ -39,8 +39,8 @@ public class SecretNumber {
         sc.nextLine();
 
         // Tela do nome do usuário
-        System.out.println("Digite aqui como você gostaria de ser chamado? ");
-        String nomeUsuario = sc.nextLine();
+        System.out.print("Como você gostaria de ser chamado? (Digite sem espaços) \nNome: ");
+        String nomeUsuario = sc.next();
         for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
 
         // Operações do Menu
@@ -66,12 +66,13 @@ public class SecretNumber {
                     int opcaoDificuldade = sc.nextInt();
                     if (opcaoDificuldade == 1 || opcaoDificuldade == 2){
                         dificuldade = (opcaoDificuldade == 1)? 11 : 51;
+                        nomeDificuldade = (opcaoDificuldade == 1)? "Fácil" : "Normal";
                     } else {
                         dificuldade = (opcaoDificuldade == 3)? 101 : 1001;
+                        nomeDificuldade = (opcaoDificuldade == 3)? "Difícil" : "Muito Difícil";
                     }
                     for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
-                    System.out.println("* A dificuldade do jogo foi alterada! *");
-
+                    System.out.printf("* A dificuldade do jogo foi alterada para: { %s } * %n", nomeDificuldade);
                     break;
                 case 3:
                     // Menu Como jogar
@@ -86,20 +87,19 @@ public class SecretNumber {
                     System.out.println(" 4: Você pode jogar novamente quantas vezes quiser, basta digitar S para continuar ou N para parar");
                     System.out.println(" 5: No final você terá uma tabela mostrando o seu desempenho");
                     System.out.println(" 6: Se divirta!");
-                    System.out.println("\n Digite qualquer tecla para voltar ao menu: ");
+                    System.out.println("\n Digite * ENTER * para voltar ao menu: ");
                     sc.nextLine();
                     sc.nextLine();
                     for (int i =0; i < 25; i++){System.out.println();} //Limpar a tela
                     break;
-                default:
-                    if (opcaoMenu == 4){
-                        System.out.printf("Até mais, %s! %n", nomeUsuario);
-                        System.out.println("Jogo encerrado!");
-                        System.exit(0);
-                        repeat = false;
-                        break;
-                    }
+                case 4:
+                    System.out.printf("Até mais, %s! %n", nomeUsuario);
+                    System.out.println("Jogo encerrado!");
+                    System.exit(0);
+                    repeat = false;
                     break;
+                default:
+                    System.out.println("*--------------Opção inválida!--------------*");
             }
         } while (repeat);
 
