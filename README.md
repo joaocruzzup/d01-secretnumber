@@ -1,6 +1,6 @@
 # Jogo Secret Number - D01 Catalisa
 <div align="center">
-<img src="https://github.com/joaocruzzup/d01-secretnumber/blob/main/src/secretNumber.png" width="500" height="300" alt="Descrição da imagem">
+<img src="https://github.com/joaocruzzup/d01-secretnumber/blob/main/img/secretNumber.png" width="500" height="300" alt="Descrição da imagem">
 </div>
 
 ## Sumário do readme
@@ -35,6 +35,10 @@ Para a entrega do desafio, explicado anteriormente era possível realizar entreg
 3. entrega-maxima: Branch com as funcionalidades da entrega máxima.
 
 E o fluxo de commits nas branchs se deu da seguinte forma:
+<div align="center">
+<img src="https://github.com/joaocruzzup/d01-secretnumber/blob/main/img/branchs.png" width="600" height="400" alt="Descrição da imagem">
+</div>
+
 
 ## Como executar?
 
